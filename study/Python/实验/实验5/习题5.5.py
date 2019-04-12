@@ -1,3 +1,4 @@
+# 习题5.5
 def isPrime(n):
     if n == 2:
         return True
@@ -5,7 +6,7 @@ def isPrime(n):
         return False
     f = 1
     for i in range(2, n):
-        if i * i >= n:
+        if i * i > n:
             break
         if n % i == 0:
             f = 0
