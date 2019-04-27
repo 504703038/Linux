@@ -65,9 +65,9 @@ categories: Python
 
 ![Python中datetime类的常用属性及时间格式化方法](./Python相关知识/Python中datetime类的常用属性及时间格式化方法.png)
 
-#### 16、Python中strftime()方法的格式化控制符
+#### 16、Python中strftime方法的格式化控制符
 
-![Python中strftime()方法的格式化控制符](./Python相关知识/Python中strftime()方法的格式化控制符.png)
+![Python中strftime方法的格式化控制符](./Python相关知识/Python中strftime方法的格式化控制符.png)
 
 #### 17、Python中序列类型的通用操作符和函数
 
