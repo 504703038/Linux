@@ -5,9 +5,12 @@ import java.util.*;
 
 public class UserList {
 	private ArrayList<User> userList = new ArrayList<User>();
-	public void init() throws NumberFormatException, IOException {
+	public void init(ArrayList<Score> scoreList) throws NumberFormatException, IOException {
 		File UserCsv = new File("user.csv");
-		BufferedReader reader = new BufferedReader(new FileReader(UserCsv));
+		BufferedReader reader = null;
+		try {
+			reader = new BufferedReader(new FileReader(UserCsv));
+		} catch (FileNotFoundException e) {return;}
 		String line ="";
 		while ((line = reader.readLine()) != null) {
 			StringTokenizer in = new StringTokenizer(line,",");
@@ -18,6 +21,14 @@ public class UserList {
 			userList.add(user);
 		}
 		reader.close();
+		
+		for (int i=0;i<scoreList.size();++i) {
+			Score score=scoreList.get(i);
+			User user = get_user(score.get_username());
+			user.up_score(score.get_score());
+			update_user_info(user);
+		}
+		
 	}
 //	添加一个新用户
 	private User add_new_user(String name) {

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="f_emo" key="selection"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="true" key="wholeword"/>
+		<list key="findhistory">
+			<item value="f_emo"/>
+			<item value="phonenumber"/>
+			<item value="lphonenumber"/>
+			<item value="account"/>
+			<item value="laccount"/>
+			<item value="x1"/>
+			<item value="x3"/>
+			<item value="g"/>
+			<item value="chuxi"/>
+			<item value="4_3"/>
+			<item value="2"/>
+			<item value="1"/>
+			<item value="Chat_Frame"/>
+			<item value="Panel"/>
+			<item value="layout_friends"/>
+		</list>
+		<list key="replacehistory">
+			<item value="painter"/>
+			<item value="painter_size"/>
+			<item value="3"/>
+			<item value="2"/>
+			<item value="Group_Chat_Frame"/>
+			<item value="JPanel"/>
+			<item value="cardlayout"/>
+			<item value="Panel"/>
+			<item value="Main_Frame"/>
+			<item value="}"/>
+			<item value="{"/>
+			<item value="sender_s"/>
+			<item value="liaotianjilu"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="328" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="454" key="DIALOG_HEIGHT"/>
+		<item value="9" key="DIALOG_X_ORIGIN"/>
+		<item value="112" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

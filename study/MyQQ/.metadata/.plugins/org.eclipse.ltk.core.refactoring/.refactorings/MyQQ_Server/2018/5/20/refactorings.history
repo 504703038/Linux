@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“MyQQ_Server/src/想法”重命名为“功能总结”" description="重命名资源“想法”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/想法" name="功能总结" stamp="1526392376437" updateReferences="true"/>
+</session>

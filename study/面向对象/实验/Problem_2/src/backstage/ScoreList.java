@@ -7,7 +7,10 @@ public class ScoreList {
 	private ArrayList<Score> scoreList = new ArrayList<Score>();
 	public void init() throws NumberFormatException, IOException {
 		File ScoreCsv = new File("score.csv");
-		BufferedReader reader = new BufferedReader(new FileReader(ScoreCsv));
+		BufferedReader reader = null;
+		try {
+			reader = new BufferedReader(new FileReader(ScoreCsv));
+		} catch (FileNotFoundException e) {return;}
 		String line ="";
 		while ((line = reader.readLine()) != null) {
 			StringTokenizer in = new StringTokenizer(line,",");

@@ -1,0 +1,7 @@
+在MyQQ_Server的Bussiness包中单独为登录验证写一个服务器，如果登陆成功则新建线程并传入Socket与
+客户端连接（不要关闭Socket）否则关闭Socket。
+
+
+在MyQQ_Client的Bussiness包中写一个类（ClientToServer）让其与服务器始终保持连接，写一个
+类（Login）通过连接服务器验证登录信息如果登陆成功将ClientToServer对象实例化并传入与服务器连
+接的Socket（在Login类中不要关闭Socket）,否则关闭Socket.

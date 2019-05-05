@@ -46,9 +46,12 @@ public class User {
 	public int get_max_score() {
 		return max_score;
 	}
+//	上传历史成绩
+	public void up_score(int score) {
+		history_score.add(score);
+	}
 //	获取用户历史成绩
 	public ArrayList<Integer> get_history_score() {
 		return history_score;
 	}
-
 }

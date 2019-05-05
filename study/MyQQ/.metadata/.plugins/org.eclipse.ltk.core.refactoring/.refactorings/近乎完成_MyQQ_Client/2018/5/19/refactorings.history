@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;UserInfoBean.java&apos; to &apos;Common.UserInfoBean.java&apos;&#x0D;&#x0A;－ 原始项目：“近乎完成_MyQQ_Client”&#x0D;&#x0A;－ 目标元素：“Common.UserInfoBean.java”&#x0D;&#x0A;－ 原始元素：“Common.UserInfoBean.java”" description="复制编译单元" destination="=备份————MyQQ_Client/src&lt;Common{UserInfoBean.java" element1="/src&lt;Common{UserInfoBean.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1525932855485" units="1" version="1.0"/>
+</session>

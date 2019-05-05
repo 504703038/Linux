@@ -5,24 +5,27 @@ import gui.*;
 import java.io.*;
 import java.util.*;
 
-
-
 public class Start {
 	
 	static UserList userList = new UserList();
 	static ScoreList scoreList = new ScoreList();	
 	static Scanner in = new Scanner(System.in);
 	public static void main(String[] args) throws IOException {
-		userList.init();
 		scoreList.init();
+		userList.init(scoreList.get_scoArrayList());
+
 //		System.out.println(userList.get_userList());
 //		System.out.println(scoreList.get_scoArrayList());
-		for(int i=1;i<=3;i++)
+		for(int i=1;i<=1;i++)
 		{
 			System.out.print("请输入用户名：");
 			String name = in.next();
 			User user = userList.get_user(name);
-			System.out.println(user.get_max_score()+"   "+user.get_play_times());
+			
+//			ArrayList<Integer> history_scoreArrayList =  user.get_history_score();
+//			System.out.println(history_scoreArrayList);
+//			System.out.println(user.get_max_score()+"   "+user.get_play_times());
+			
 			Digital digi = new Digital(user.get_name());
 			while (!digi.is_finish()) {
 				System.out.print("请进行第"+(digi.get_try_times()+1)+"次尝试：");
@@ -35,9 +38,7 @@ public class Start {
 			scoreList.add_new_score(digi.get_score());
 		}
 		
-		
 		userList.ended();
 		scoreList.ended();
 	}
-
 }
