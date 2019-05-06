@@ -5,20 +5,64 @@ import javax.swing.*;
 
 
 
+
 public class Main_interface {
 
 	JFrame mainFrame = new JFrame("Game");
-	JPanel panel;
+	Main_Panel mainPanel;
+	JButton newGaButton = new JButton("开始游戏");
+	JButton randButton = new JButton("排行榜");
+	JButton quitButton = new JButton("退出游戏");
 	public Main_interface() {
 
 		setFrameSize();//设置界面大小
 		setFramePosition();//设置界面位置
-		setFramBackground();//设置界面背景
-		
+		setFramBackground("./img/background.jpg");//设置界面背景
+		addButton();//添加按钮
 		setFrameViewable(true);//设计界面是否可见
 		mainFrame.setDefaultCloseOperation(2);
 	}
-	
+	private void addButton() {
+		
+//		设置大小
+//		newGaButton.setSize(new Dimension(100,40));
+		newGaButton.setSize(100, 40);
+		randButton.setSize(100, 40);
+		quitButton.setSize(100, 40);
+		
+		
+//		设置字体
+		Font font = new Font("宋体",Font.BOLD,24);
+		newGaButton.setFont(font);
+		randButton.setFont(font);
+		quitButton.setFont(font);
+		
+		
+		
+//		设置透明
+		Color color = new Color(200,0,0);
+		newGaButton.setBackground(color);
+		randButton.setBackground(color);
+		quitButton.setBackground(color);
+		newGaButton.setForeground(color);
+		randButton.setForeground(color);
+		quitButton.setForeground(color);
+		newGaButton.setOpaque(false);
+		randButton.setOpaque(false);
+		quitButton.setOpaque(false);
+		
+//		设置边界
+		newGaButton.setBorder(null);
+		randButton.setBorder(null);
+		quitButton.setBorder(null);
+		
+		
+//		添加按钮
+		mainPanel.add(newGaButton);
+		mainPanel.add(randButton);
+		mainPanel.add(quitButton);
+	}
+
 	private void setFrameSize() {
 //		获取屏幕大小
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -37,18 +81,8 @@ public class Main_interface {
 		mainFrame.setVisible(bool);
 	}
 	
-	private void setFramBackground() {
-		ImageIcon background = new ImageIcon("background.jpg");
-		JLabel backLabel = new JLabel(background);
-		backLabel.setBounds(0, 0, background.getIconWidth(), background.getIconHeight());
-		panel = (JPanel)mainFrame.getContentPane();
-//		panel.setOpaque(false);
-		panel.setLayout(new FlowLayout());
-		mainFrame.getContentPane().setLayout(null);
-		panel.add(new JButton("测试按钮"));
-		backLabel.setOpaque(false);
-		mainFrame.getLayeredPane().setLayout(null);
-		mainFrame.getContentPane().add(backLabel,new Integer(Integer.MIN_VALUE));
-//		mainFrame.
+	private void setFramBackground(String imagPath) {
+		mainPanel = new Main_Panel(imagPath);
+		mainFrame.add(mainPanel);
 	}
 }
