@@ -1,7 +1,7 @@
 # 习题7.2
 from PIL import Image
 import math
-im = Image.open('fcity.jpg')
+im = Image.open('./实验/实验7/fcity.jpg')
 w, h = im.size
 x = math.sqrt(4*10*1024*w/h)
 y = x*h/w

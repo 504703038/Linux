@@ -1,9 +1,9 @@
 # 习题4.7
-from random import *
+from random import randrange
 x = randrange(0, 9, 1)
 y = -1
 tot = 0
-while x != y :
+while x != y:
     tot = tot + 1
     while True:
         try:

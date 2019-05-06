@@ -1,7 +1,7 @@
 # 实例代码10.4
 import jieba
 excludes = {"将军", "却说", "荆州", "二人", "不可", "不能", "如此"}
-txt = open("三国演义.txt", "r", encoding='utf-8').read()
+txt = open("./实验/实验6/三国演义.txt", "r", encoding='utf-8').read()
 words = jieba.lcut(txt)
 counts = {}
 for word in words:

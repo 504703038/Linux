@@ -10,10 +10,10 @@ print(s2)
 dt2 = json.loads(s2)
 print(dt2, type(dt2))
 # json.dump()函数
-fp = open('test.json', "w+")
+fp = open('./实验/实验7/test.json', "w+")
 json.dump(dt, fp, sort_keys=True, indent=4)
 fp.close()
 # json.load()函数
-fp = open('test.json', "r+")
+fp = open('./实验/实验7/test.json', "r+")
 s3 = json.load(fp)
 print(s3)

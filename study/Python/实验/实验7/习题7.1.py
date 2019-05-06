@@ -1,6 +1,6 @@
 # 习题7.1
 import keyword
-f = open('test.py', 'r')
+f = open('./实验/实验7/test.py', 'r')
 text = f.read()
 f.close()
 
@@ -17,6 +17,6 @@ for ch in text:
         content += ch
         tmp = ''
 
-f = open('test.py', 'w')
+f = open('./实验/实验7/test.py', 'w')
 f.write(content)
 f.close()

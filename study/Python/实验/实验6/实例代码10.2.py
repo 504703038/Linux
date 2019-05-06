@@ -3,7 +3,7 @@ excludes = {"the", "and", "of", "you", "a", "i", "my", "in"}
 
 
 def getText():
-    txt = open("hamlet.txt", "r").read()
+    txt = open("./实验/实验6/hamlet.txt", "r").read()
     txt = txt.lower()
     for ch in '!"#$%&()*+,-./:;<=>?@[\\]^_‘{|}~':
         txt = txt.replace(ch, " ")  # 将文本中特殊字符替换为空格

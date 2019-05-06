@@ -1,9 +1,9 @@
 # 习题4.4
-from random import *
+from random import randint
 x = randint(0, 100)
 y = 10
 tot = 0
-while x != y :
+while x != y:
     tot = tot + 1
     y = eval(input("请输入你猜的数："))
     if y > x:

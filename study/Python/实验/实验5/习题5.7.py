@@ -1,5 +1,5 @@
 # 习题5.7
-def Hanoi(a, b, c, n): 
+def Hanoi(a, b, c, n):
     if n > 1:
         Hanoi(a, c, b, n - 1)
     print("{} -> {}".format(a, c))

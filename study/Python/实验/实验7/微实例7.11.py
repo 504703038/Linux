@@ -1,6 +1,6 @@
 # 微实例7.11
-fr = open("price2016.csv", "r")
-fw = open("price2016out.csv", "w")
+fr = open("./实验/实验7/price2016.csv", "r")
+fw = open("./实验/实验7/price2016out.csv", "w")
 ls = []
 for line in fr:  # 将CSV 文件中的二维数据读入到列表变量
     line = line.replace("\n", "")
