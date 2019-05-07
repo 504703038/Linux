@@ -6,7 +6,7 @@ import java.util.*;
 public class UserList {
 	private ArrayList<User> userList = new ArrayList<User>();
 	public void init(ArrayList<Score> scoreList) throws NumberFormatException, IOException {
-		File UserCsv = new File("user.csv");
+		File UserCsv = new File("./data/user.csv");
 		BufferedReader reader = null;
 		try {
 			reader = new BufferedReader(new FileReader(UserCsv));
@@ -79,7 +79,7 @@ public class UserList {
 		return userList;
 	}
 	public void ended() throws IOException {
-		File UserCsv = new File("user.csv");
+		File UserCsv = new File("./data/user.csv");
 		BufferedWriter writer = new BufferedWriter(new FileWriter(UserCsv));
 		for (int i = 0; i < userList.size(); i++) {
 			User user = userList.get(i);

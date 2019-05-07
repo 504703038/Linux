@@ -6,7 +6,7 @@ import java.util.*;
 public class ScoreList {
 	private ArrayList<Score> scoreList = new ArrayList<Score>();
 	public void init() throws NumberFormatException, IOException {
-		File ScoreCsv = new File("score.csv");
+		File ScoreCsv = new File("./data/score.csv");
 		BufferedReader reader = null;
 		try {
 			reader = new BufferedReader(new FileReader(ScoreCsv));
@@ -39,7 +39,7 @@ public class ScoreList {
 		return scoreList;
 	}
 	public void ended() throws IOException {
-		File ScoreCsv = new File("score.csv");
+		File ScoreCsv = new File("./data/score.csv");
 		BufferedWriter writer = new BufferedWriter(new FileWriter(ScoreCsv));
 		for (int i = 0; i < scoreList.size(); i++) {
 			Score score = scoreList.get(i);

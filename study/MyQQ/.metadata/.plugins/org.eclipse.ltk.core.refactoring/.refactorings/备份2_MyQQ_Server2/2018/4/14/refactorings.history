@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;备份说明&apos; to &apos;备份2_MyQQ_Client2/src&apos;&#x0D;&#x0A;－ 原始项目：“备份2_MyQQ_Server2”&#x0D;&#x0A;－ 目标元素：“备份2_MyQQ_Client2/src”&#x0D;&#x0A;－ 原始元素：“备份说明”&#x0D;&#x0A;－ 更新对已重构元素的引用" description="移动文件" destination="=备份2_MyQQ_Client2/src" element1="src/备份说明" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1523079602893" units="0" version="1.0"/>
-</session>
