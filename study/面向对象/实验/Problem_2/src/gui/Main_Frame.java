@@ -14,8 +14,7 @@ public class Main_Frame extends JFrame {
 
 	public Main_Frame() {
 		super("Game");
-		setFrameSize(3, 2);// 设置界面大小
-		setFramePosition();// 设置界面位置
+		setFrameSize(3, 2);// 设置界面大小并居中
 		setFramBackground("./img/background.jpg");// 设置界面背景
 //		super.setVisible(true);
 	}
@@ -27,11 +26,6 @@ public class Main_Frame extends JFrame {
 		int h = (int) (screenSize.getHeight() / y);
 		super.setSize(w, h);
 		super.setResizable(false);
-	}
-
-//	设置窗口居中
-	private void setFramePosition() {
-
 		super.setLocationRelativeTo(null);
 	}
 
