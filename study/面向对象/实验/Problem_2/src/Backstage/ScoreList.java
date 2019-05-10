@@ -1,3 +1,4 @@
+package Backstage;
 
 
 import java.io.*;
@@ -31,7 +32,7 @@ public class ScoreList {
 	public static ArrayList<Score> get_scoArrayList(){
 		Comparator<Score> cmp = new Comparator<Score>() {
 			public int compare(Score arg0, Score arg1) {
-				if (arg0.get_score()>arg1.get_score()) return 1;
+				if (arg0.get_score()<arg1.get_score()) return 1;
 				else return -1;
 			}
 		};

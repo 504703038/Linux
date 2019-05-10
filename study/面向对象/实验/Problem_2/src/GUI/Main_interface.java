@@ -1,9 +1,16 @@
+package GUI;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.io.IOException;
 
 import javax.swing.*;
+
+import Backstage.ScoreList;
+import Backstage.UserList;
 
 public class Main_interface implements MouseListener, Runnable {
 
@@ -14,12 +21,12 @@ public class Main_interface implements MouseListener, Runnable {
 	private JButton quitButton = new JButton("退出游戏");
 	private Input_userName_interface dialog = null;
 	private Score_interface scoreInterface = null;
-	
+
 	private boolean loged;
 	private String userName;
 
 	public Main_interface() {
-		
+
 	}
 
 //	添加监听器
@@ -74,13 +81,15 @@ public class Main_interface implements MouseListener, Runnable {
 //	设置界面是否可见
 	public void setFrameViewable(boolean bool) {
 		mainFrame.setVisible(bool);
-		if (bool) loged=false;
+		if (bool)
+			loged = false;
 	}
 
 //	是否登录了
 	public boolean isLoged() {
 		return loged;
 	}
+
 	public String get_userName() {
 		return userName;
 	}
@@ -134,5 +143,53 @@ public class Main_interface implements MouseListener, Runnable {
 		setButtonListener();// 给按钮添加监听
 		mainFrame.setVisible(true);// 设计界面是否可见
 		mainFrame.setDefaultCloseOperation(3);
+		mainFrame.addWindowListener(new WindowListener() {
+
+			@Override
+			public void windowOpened(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void windowIconified(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void windowDeiconified(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void windowDeactivated(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void windowClosing(WindowEvent arg0) {
+				try {
+					UserList.ended();
+					ScoreList.ended();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+
+			@Override
+			public void windowClosed(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void windowActivated(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+
+			}
+		});
 	}
 }

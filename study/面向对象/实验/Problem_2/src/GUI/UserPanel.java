@@ -1,3 +1,4 @@
+package GUI;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -8,6 +9,9 @@ import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+
+import Backstage.User;
+import Backstage.UserList;
 
 public class UserPanel extends JPanel {
 
@@ -66,18 +70,20 @@ public class UserPanel extends JPanel {
 		title.add(playTimesLabel);
 	}
 
-	
 	public void loadRank() {
 		Font font = new Font("宋体", Font.BOLD, 18);
 		ArrayList<User> userList = UserList.get_userList();
 		int w = 501;
-		int h = 500;
-		
+		int h = 455;
+
 		scrollPane.setBounds(0, 45, w, h);
+		scrollPane.setHorizontalScrollBar(null);
+//		scrollPane.setBackground(new Color(255,0,0));
 		
 		scorePanel.removeAll();
-//		scorePanel.setBounds(0, 45, w, h);
-		scorePanel.setBackground(new Color(255,255,255));
+		scorePanel.setLayout(new GridLayout(userList.size(),1));
+		scorePanel.setBounds(0, 0, w, 10);
+		scorePanel.setBackground(new Color(0, 0, 0));
 
 		JLabel[] user_name_labels = new JLabel[userList.size()];
 		JLabel[] max_score_labels = new JLabel[userList.size()];
@@ -94,15 +100,13 @@ public class UserPanel extends JPanel {
 			user_name_labels[cnt].setFont(font);
 			max_score_labels[cnt].setFont(font);
 			play_times_labels[cnt].setFont(font);
-			
-			
+
 			List[cnt].add(user_name_labels[cnt]);
 			List[cnt].add(max_score_labels[cnt]);
 			List[cnt].add(play_times_labels[cnt]);
-			List[cnt].setPreferredSize(new Dimension(500,40));
-			List[cnt].setBackground(new Color(255,255,255));
+			List[cnt].setPreferredSize(new Dimension(500, 40));
+			List[cnt].setBackground(new Color(255, 255, 255));
 			scorePanel.add(List[cnt]);
-			
 			cnt++;
 		}
 	}

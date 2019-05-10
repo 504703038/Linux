@@ -1,3 +1,4 @@
+package GUI;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -39,6 +40,10 @@ public class Game_interface implements Runnable {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				int tmp = e.getKeyChar();
+				if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+					if (!input.getText().equals("") && input.getText().length() == 4)
+						inputed = true;
+				}
 				if (tmp != 8 && (tmp > 57 || tmp < 48 || input.getText().length() > 3)) {
 					e.consume();
 				}
@@ -66,7 +71,8 @@ public class Game_interface implements Runnable {
 		submitButton.setFont(font);
 		submitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				inputed = true;
+				if (!input.getText().equals("") && input.getText().length() == 4)
+					inputed = true;
 			}
 		});
 	}
@@ -114,6 +120,14 @@ public class Game_interface implements Runnable {
 
 	public int getInput() {
 		return Integer.parseInt(input.getText());
+	}
+
+	public void close() {
+		mainFrame.dispose();
+	}
+
+	public boolean isVisible() {
+		return mainFrame.isVisible();
 	}
 
 }

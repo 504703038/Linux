@@ -1,3 +1,4 @@
+package GUI;
 
 
 import java.awt.Color;
@@ -8,6 +9,9 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 
 import javax.swing.*;
+
+import Backstage.Score;
+import Backstage.ScoreList;
 
 public class ScorePanel extends JPanel {
 
@@ -62,13 +66,15 @@ public class ScorePanel extends JPanel {
 		Font font = new Font("宋体", Font.BOLD, 18);
 		ArrayList<Score> scoreList = ScoreList.get_scoArrayList();
 		int w = 501;
-		int h = 500;
+		int h = 455;
 		
 		scrollPane.setBounds(0, 45, w, h);
+		scrollPane.setHorizontalScrollBar(null);
 		
 		scorePanel.removeAll();
-//		scorePanel.setBounds(0, 45, w, h);
-		scorePanel.setBackground(new Color(255,255,255));
+		scorePanel.setLayout(new GridLayout(scoreList.size(),1));
+		scorePanel.setBounds(0, 0, w, 10);
+		scorePanel.setBackground(new Color(0, 0, 0));
 
 		JLabel[] user_name_labels = new JLabel[scoreList.size()];
 		JLabel[] score_labels = new JLabel[scoreList.size()];
