@@ -1,4 +1,5 @@
 
+import java.awt.Font;
 import java.io.IOException;
 
 import javax.swing.*;
@@ -54,9 +55,20 @@ public class Start extends Thread {
 				if (!gameInterface.isVisible())
 					break;
 				int num = gameInterface.getInput();
-				System.out.println(digi.check(num));
+				String result = digi.check(num);
+//				System.out.println(digi.check(num));
+				if (!digi.is_finish()) {
+					JLabel content = new JLabel("第" + (digi.get_try_times()) + "次尝试结果：" + result);
+					content.setFont(new Font("宋体", Font.BOLD, 18));
+					JOptionPane.showMessageDialog(null,content,"提示", 2, new ImageIcon("./img/False.png"));
+				}
 			}
-			System.out.println("恭喜你猜对了，一共猜了" + digi.get_try_times() + "次，得分为：" + digi.get_score().get_score());
+			if (digi.is_finish()) {
+				JLabel content = new JLabel("恭喜你猜对了，一共猜了" + digi.get_try_times() + "次，得分为：" + digi.get_score().get_score());
+				content.setFont(new Font("宋体", Font.BOLD, 18));
+				JOptionPane.showMessageDialog(null,content,"提示", 2, new ImageIcon("./img/True.png"));
+			}
+//			System.out.println("恭喜你猜对了，一共猜了" + digi.get_try_times() + "次，得分为：" + digi.get_score().get_score());
 			gameInterface.close();
 			mainInterface.setFrameViewable(true);
 			user.once_play(digi.get_score());
