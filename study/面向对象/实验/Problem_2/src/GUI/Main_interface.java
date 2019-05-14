@@ -20,8 +20,6 @@ public class Main_interface implements MouseListener, Runnable {
 	private JButton randButton = new JButton("排行榜");
 	private JButton quitButton = new JButton("退出游戏");
 	private Input_userName_interface dialog = null;
-	private Score_interface scoreInterface = null;
-
 	private boolean loged;
 	private String userName;
 
@@ -106,7 +104,7 @@ public class Main_interface implements MouseListener, Runnable {
 //			gameInterface = new Game_interface(this, user);
 		}
 		if (event.getSource() == randButton) {
-			scoreInterface = new Score_interface(this);
+			new Score_interface(this);
 			mainFrame.setVisible(false);
 //			scoreInterface.setFrameViewable(true);
 		}

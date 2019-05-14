@@ -91,7 +91,7 @@ public class UserPanel extends JPanel {
 		JPanel[] List = new JPanel[userList.size()];
 		int cnt = 0;
 		for (User user : userList) {
-			System.out.println(user.get_name() + "\t" + "" + user.get_max_score() + "\t" + "" + user.get_play_times());
+//			System.out.println(user.get_name() + "\t" + "" + user.get_max_score() + "\t" + "" + user.get_play_times());
 			List[cnt] = new JPanel(new GridLayout(1, 3));
 			user_name_labels[cnt] = new JLabel(user.get_name(), JLabel.CENTER);
 			max_score_labels[cnt] = new JLabel("" + user.get_max_score(), JLabel.CENTER);

@@ -81,7 +81,7 @@ public class ScorePanel extends JPanel {
 		JPanel[] List = new JPanel[scoreList.size()];
 		int cnt = 0;
 		for (Score score : scoreList) {
-			System.out.println(score.get_username() + "\t" + "" + score.get_score());
+//			System.out.println(score.get_username() + "\t" + "" + score.get_score());
 			List[cnt] = new JPanel(new GridLayout(1, 2));
 			user_name_labels[cnt] = new JLabel(score.get_username(), JLabel.CENTER);
 			score_labels[cnt] = new JLabel("" + score.get_score(), JLabel.CENTER);
