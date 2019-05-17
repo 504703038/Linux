@@ -5,8 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 
 import javax.swing.*;
 
@@ -43,6 +41,13 @@ public class Game_interface implements Runnable {
 				if (e.getKeyChar() == KeyEvent.VK_ENTER) {
 					if (!input.getText().equals("") && input.getText().length() == 4)
 						inputed = true;
+					else {
+//						if (input.getText().length() != 4) {
+							JLabel content = new JLabel("输入必须为四位整数。");
+							content.setFont(new Font("宋体", Font.BOLD, 18));
+							JOptionPane.showMessageDialog(null,content,"提示", 2, new ImageIcon("./img/False.png"));
+//						}
+					}
 				}
 				if (tmp != 8 && (tmp > 57 || tmp < 48 || input.getText().length() > 3)) {
 					e.consume();
@@ -73,6 +78,13 @@ public class Game_interface implements Runnable {
 			public void actionPerformed(ActionEvent arg0) {
 				if (!input.getText().equals("") && input.getText().length() == 4)
 					inputed = true;
+				else {
+//					if (input.getText().length() != 4) {
+						JLabel content = new JLabel("输入必须为四位整数。");
+						content.setFont(new Font("宋体", Font.BOLD, 18));
+						JOptionPane.showMessageDialog(null,content,"提示", 2, new ImageIcon("./img/False.png"));
+//					}
+				}
 			}
 		});
 	}
@@ -123,6 +135,12 @@ public class Game_interface implements Runnable {
 	}
 
 	public void close() {
+//		try {
+//			mainFrame.dispose();
+//		}
+//		catch (Exception e) {
+//			System.out.println("Testing print 8");
+//		}
 		mainFrame.dispose();
 	}
 

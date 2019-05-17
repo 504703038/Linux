@@ -105,6 +105,7 @@ public class Input_userName_interface extends JDialog implements ActionListener 
 	public void actionPerformed(ActionEvent arg0) {
 //		this.setVisible(false);
 		userName = input.getText();
+//		if (!userName.equals(""))
 		this.dispose();
 	}
 

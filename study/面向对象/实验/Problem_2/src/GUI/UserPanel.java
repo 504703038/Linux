@@ -83,7 +83,7 @@ public class UserPanel extends JPanel {
 		scorePanel.removeAll();
 		scorePanel.setLayout(new GridLayout(userList.size(),1));
 		scorePanel.setBounds(0, 0, w, 10);
-		scorePanel.setBackground(new Color(0, 0, 0));
+		scorePanel.setBackground(new Color(255, 255, 255));
 
 		JLabel[] user_name_labels = new JLabel[userList.size()];
 		JLabel[] max_score_labels = new JLabel[userList.size()];

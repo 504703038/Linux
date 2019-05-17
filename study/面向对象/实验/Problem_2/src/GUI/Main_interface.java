@@ -97,8 +97,18 @@ public class Main_interface implements MouseListener, Runnable {
 		if (event.getSource() == newGameButton) {
 			dialog = new Input_userName_interface(mainFrame);
 			userName = dialog.get_userName();
-			loged = true;
-			System.out.println("loged");
+			if (userName!=null) {
+				if (!userName.equals("")){
+					loged = true;
+//					System.out.println("loged");
+				}
+				else {
+					JLabel content = new JLabel("用户名不能为空!");
+					content.setFont(new Font("宋体", Font.BOLD, 18));
+					JOptionPane.showMessageDialog(null,content,"提示", 2, new ImageIcon("./img/False.png"));
+				}
+			}
+			
 //			user = userList.get_user(dialog.get_userName());
 //			mainFrame.setVisible(false);
 //			gameInterface = new Game_interface(this, user);
