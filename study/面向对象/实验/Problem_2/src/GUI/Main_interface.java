@@ -100,7 +100,7 @@ public class Main_interface implements MouseListener, Runnable {
 			if (userName!=null) {
 				if (!userName.equals("")){
 					loged = true;
-//					System.out.println("loged");
+//					//System.out.println("loged");
 				}
 				else {
 					JLabel content = new JLabel("用户名不能为空!");
@@ -109,17 +109,17 @@ public class Main_interface implements MouseListener, Runnable {
 				}
 			}
 			
-//			user = userList.get_user(dialog.get_userName());
-//			mainFrame.setVisible(false);
-//			gameInterface = new Game_interface(this, user);
+//			//user = userList.get_user(dialog.get_userName());
+//			//mainFrame.setVisible(false);
+//			//gameInterface = new Game_interface(this, user);
 		}
 		if (event.getSource() == randButton) {
 			new Score_interface(this);
 			mainFrame.setVisible(false);
-//			scoreInterface.setFrameViewable(true);
+//			//scoreInterface.setFrameViewable(true);
 		}
 		if (event.getSource() == quitButton) {
-//			mainFrame.dispose();
+//			//mainFrame.dispose();
 			System.exit(0);
 		}
 	}

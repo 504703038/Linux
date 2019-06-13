@@ -48,7 +48,7 @@ public class Start extends Thread {
 
 			/* 生成随机数 */
 			Digital digi = new Digital(user.get_name());
-//			System.out.println(digi);
+			System.out.println(digi);
 			/* 如果没有才对就继续 */
 			while (!digi.is_finish()) {
 

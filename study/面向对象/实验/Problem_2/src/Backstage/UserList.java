@@ -6,6 +6,7 @@ import java.util.*;
 
 public class UserList {
 	private static ArrayList<User> userList = new ArrayList<User>();
+//	读入所有用户信息
 	public static void init(ArrayList<Score> scoreList) throws NumberFormatException, IOException {
 		File UserCsv = new File("./data/user.csv");
 		BufferedReader reader = null;
@@ -22,14 +23,12 @@ public class UserList {
 			userList.add(user);
 		}
 		reader.close();
-		
 		for (int i=0;i<scoreList.size();++i) {
 			Score score=scoreList.get(i);
 			User user = get_user(score.get_username());
 			user.up_score(score.get_score());
 			update_user_info(user);
-		}
-		
+		}	
 	}
 //	添加一个新用户
 	private static User add_new_user(String name) {
@@ -79,6 +78,7 @@ public class UserList {
 		userList.sort(cmp);
 		return userList;
 	}
+//	将用户所有信息以文件形式保存本地
 	public static void ended() throws IOException {
 		File UserCsv = new File("./data/user.csv");
 		BufferedWriter writer = new BufferedWriter(new FileWriter(UserCsv));

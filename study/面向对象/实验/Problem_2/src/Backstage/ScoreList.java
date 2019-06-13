@@ -6,6 +6,7 @@ import java.util.*;
 
 public class ScoreList {
 	private static ArrayList<Score> scoreList = new ArrayList<Score>();
+//	读入所有c成绩信息
 	public static void init() throws NumberFormatException, IOException {
 		File ScoreCsv = new File("./data/score.csv");
 		BufferedReader reader = null;
@@ -22,12 +23,10 @@ public class ScoreList {
 		}
 		reader.close();
 	}
-	
 //	添加一个新成绩
 	public static void add_new_score(Score score) {
 		scoreList.add(score);
 	}
-	
 //	返回按成绩排序的列表
 	public static ArrayList<Score> get_scoArrayList(){
 		Comparator<Score> cmp = new Comparator<Score>() {
@@ -39,6 +38,7 @@ public class ScoreList {
 		scoreList.sort(cmp);
 		return scoreList;
 	}
+//	将所有成绩信息以文件形式保存本地
 	public static void ended() throws IOException {
 		File ScoreCsv = new File("./data/score.csv");
 		BufferedWriter writer = new BufferedWriter(new FileWriter(ScoreCsv));

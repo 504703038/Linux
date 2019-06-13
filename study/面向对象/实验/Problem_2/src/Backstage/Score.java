@@ -4,7 +4,7 @@ package Backstage;
 public class Score {
 	private int score;
 	private  String user_name;
-	
+//	初始化
 	public Score() {
 		user_name="";
 		score=0;
@@ -13,7 +13,7 @@ public class Score {
 		user_name=name;
 		score=s;
 	}
-	//	修改用户名
+//	修改用户名
 	public void set_username(String name) {
 		user_name=name;
 	}

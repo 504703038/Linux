@@ -79,11 +79,11 @@ public class Game_interface implements Runnable {
 				if (!input.getText().equals("") && input.getText().length() == 4)
 					inputed = true;
 				else {
-//					if (input.getText().length() != 4) {
+//					//if (input.getText().length() != 4) {
 						JLabel content = new JLabel("输入必须为四位整数。");
 						content.setFont(new Font("宋体", Font.BOLD, 18));
 						JOptionPane.showMessageDialog(null,content,"提示", 2, new ImageIcon("./img/False.png"));
-//					}
+//					//}
 				}
 			}
 		});

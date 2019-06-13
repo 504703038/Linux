@@ -9,7 +9,6 @@ public class Digital {
 	private String user_name;
 	private static int try_times;// 尝试次数
 //	初始化
-
 	public Digital(String name) {
 		for (int i = 0; i < 10; i++) {
 			number[i] = 0;
@@ -18,8 +17,7 @@ public class Digital {
 		user_name = name;
 		generate();
 	}
-
-//	随机数生成
+//	随机数生成游戏数字
 	private void generate() {
 		make_it = false;
 		Random random = new Random();
@@ -32,7 +30,6 @@ public class Digital {
 			digi[i] = (char) (48 + x);
 		}
 	}
-
 //	验证输入的数
 	public String check(int x) {
 		if (!make_it)
@@ -53,22 +50,20 @@ public class Digital {
 			make_it = true;
 		return n + "A" + m + "B";
 	}
-
 //	获取尝试次数
 	public int get_try_times() {
 		return try_times;
 	}
-
 //	生成分数
 	public Score get_score() {
 		Score score = new Score(user_name, 100 - try_times);
 		return score;
 	}
-
+//	判断一次游戏是否结束
 	public boolean is_finish() {
 		return make_it;
 	}
-
+//	输出数字
 	public String toString() {
 		return "" + digi[0] + digi[1] + digi[2] + digi[3];
 	}
