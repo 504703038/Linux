@@ -1,8 +1,9 @@
 import random
-import pylab
+import matplotlib.pyplot as plt
+from matplotlib.ticker import LogLocator, FormatStrFormatter
 INF = 1e9
 lambd = 8
-mu = 10
+mu = 9
 Q = 0  # 队列
 jobs = 0  # 已服务人数
 arrival_next = 0  # 下一人到达时间
@@ -46,6 +47,7 @@ def que_length_time(length, cur_time):
 def arrive():
     global Q, arrival_next, num, depart_next, QLenth_last_time
     Q += 1  # 排队队列长度+1
+    # print(Q)
     num += 1  # 到达人数+1
     arrive_time.append(arrival_next)  # 记录到达时间
     QLenth_arr.append(Q-1)  # 记录队列长度
@@ -81,22 +83,37 @@ while jobs < 1e6:
 # 平均等待时间
 # pylab.plot(depart_time, wait_time)
 
-pylab.figure(1)
-ax1 = pylab.subplot(1, 2, 1)
-ax2 = pylab.subplot(1, 2, 2)
-# 队列长度分布
-pylab.sca(ax1)
+# ax = plt.axes(yscale='log')
+# plt.sca(ax)
+
+plt.figure(1)
+ax1 = plt.subplot(1, 2, 1)
+ax2 = plt.subplot(1, 2, 2)
+# # 队列长度分布
+plt.sca(ax1)
+
 # 队列长度出现次数
-pylab.plot(list(QLenth_cnt.keys()), [
-           y / num for y in list(QLenth_cnt.values())], label="Queue length distribution")
-pylab.legend(loc='upper left')
+# pylab.plot(list(QLenth_cnt.keys()), [
+#            y / num for y in list(QLenth_cnt.values())], label="Queue length distribution")
+# pylab.legend(loc='upper left')
 # 队列长度占用时间
-# pylab.plot(list(QLenth_time.keys()), [
-#            y / QLenth_last_time for y in list(QLenth_time.values())])
+sum = 0
+x = []
+y = []
+for key in QLenth_time:
+    value = QLenth_time[key]
+    x.append(key)
+    y.append((QLenth_last_time - sum) / QLenth_last_time)
+    sum += value
+plt.plot(x, y, label="Queue length distribution")
+plt.yscale('log')
+plt.legend(loc='upper left')
 
 # 等待时间分布
-pylab.sca(ax2)
-pylab.plot(list(wait_time_cnt.keys()), [
-           y / jobs for y in list(wait_time_cnt.values())], label="Waiting time distribution")
-pylab.legend(loc='upper left')
-pylab.show()
+plt.sca(ax2)
+plt.plot(list(wait_time_cnt.keys()), [
+    y / jobs for y in list(wait_time_cnt.values())], label="Waiting time distribution")
+plt.yscale('log')
+plt.legend(loc='upper left')
+
+plt.show()
