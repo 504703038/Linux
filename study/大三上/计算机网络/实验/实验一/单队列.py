@@ -15,7 +15,7 @@ wait_time = []  # 等待时间
 
 
 # 数据统计
-def static(current_time, type):
+def statistics(current_time, type):
     if not QLength_P.__contains__(QLength):
         QLength_P[QLength] = 0
     QLength_P[QLength] += 1
@@ -33,7 +33,7 @@ def static(current_time, type):
 def arrive():
     global QLength, arrival_time, depart_time, last_time, num
     QLength += 1
-    static(arrival_time, 'arrive')  # 数据统计
+    statistics(arrival_time, 'arrive')  # 数据统计
     num += 1
     if depart_time == INF:
         depart_time = arrival_time + random.expovariate(mu)
@@ -45,7 +45,7 @@ def arrive():
 def depart():
     global QLength, depart_time, last_time, jobs
     QLength -= 1
-    static(depart_time, 'depart')  # 数据统计
+    statistics(depart_time, 'depart')  # 数据统计
     jobs += 1
     last_time = depart_time
     if QLength > 0:
@@ -86,7 +86,7 @@ def paint():
 
 
 if __name__ == '__main__':
-    while jobs < 1e7:
+    while jobs < 1e6:
         if arrival_time < depart_time:
             arrive()
         else:
