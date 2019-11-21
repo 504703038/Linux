@@ -51,29 +51,15 @@ def get_distance(sample, x):
 
 
 # k_n邻近法
-def K_n(k, x, sample):
-    dis = []
-    for i in range(4):
-        tmp = get_distance(sample[i], x)
-        for j in tmp:
-            dis.append([j, i])
-    dis.sort()
-    cnt = [0, 0, 0, 0]
-    for i in range(k):
-        w = dis[i][1]
-        cnt[w] += 1
-    return cnt
-
-
 def K_n_1(k, sample):
     num = 1000
     n = 10
-    x = numpy.linspace(-3, 3, num)
+    x = numpy.linspace(-2, 3, num)
     y = []
     for i in range(num):
         dis = get_distance(sample, x[i])
         dis.sort()
-        v = 2 * dis[k]
+        v = 2 * dis[k-1]
         y.append(k / n / v)
     # 画图
     plt.subplot(1, 5, k)
@@ -86,14 +72,14 @@ def K_n_1(k, sample):
 def K_n_2(k, sample):
     num = 100
     n = 10
-    x = y = numpy.linspace(-3, 3, num)
+    x = y = numpy.linspace(-6, 3, num)
     z = []
     for i in range(num):
         tmp = []
         for j in range(num):
             dis = get_distance(sample, [x[i], y[j]])
             dis.sort()
-            v = math.pi * (dis[k]**2)
+            v = math.pi * (dis[k-1]**2)
             tmp.append(k / n / v)
         z.append(tmp)
     x, y = numpy.meshgrid(x, y)
@@ -108,11 +94,15 @@ def K_n_2(k, sample):
     plt.title("k="+str(k))
 
 
-# K-n邻近法分类
-def K_n_Classify(k, x):
-    w = K_n(k, x, sample)
-    clas = numpy.argmax(w)
-    return clas
+def K_n_3(k, x, sample):
+    n = 10
+    for i in range(4):
+        dis = get_distance(sample[i], x)
+        dis.sort()
+        v = 4 / 3 * math.pi * (dis[k-1] ** 3)
+        p = k / n / v
+        print(x.T, "在第", i + 1, "类下的密度估计为：", p)
+        # print(dis)
 
 
 def problem():
@@ -147,7 +137,7 @@ def problem_3():
     data = [numpy.array([[0.14], [0.72], [4.1]]), numpy.array(
         [[-0.81], [0.61], [-0.38]]), numpy.array([[0.31], [1.51], [-0.50]])]
     for x in data:
-        print(x.T, "属于第", K_n_Classify(k, x), "类")
+        K_n_3(k, x, sample)
 
 
 problem()
