@@ -120,7 +120,7 @@ def paint():
 
 
 def main():
-    n = 1e6
+    n = 1e5
     while np.sum(servered) < n:
         if arr_time < depart_time and np.sum(num) < n:
             arrive()
