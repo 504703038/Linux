@@ -99,6 +99,8 @@ def paint():
     # 队列长度分布
     QLength_distribution = plt.subplot(1, 2, 1)
     plt.sca(QLength_distribution)
+    file_QLength = open("队列长度分布.txt", "w")
+    QLength_distribution_data = {}
     for i in range(3):
         x = []
         y = []
@@ -109,12 +111,17 @@ def paint():
         for key in x:
             y.append((lis[i].lastTime - sum) / lis[i].lastTime)
             sum += QLength[i][key]
+        QLength_distribution_data['x' + str(i)] = x
+        QLength_distribution_data['y' + str(i)] = y
         plt.plot(x, y, color=color[i])
         plt.yscale('log')
         # plt.legend(loc='upper left')
+    print(QLength_distribution_data, file=file_QLength)
     # 等待时间分布
     WaitTime_distribution = plt.subplot(1, 2, 2)
     plt.sca(WaitTime_distribution)
+    file_WaitTime = open("等待时间分布.txt", "w")
+    WaitTime_distribution_data = {}
     for i in range(3):
         data = {}
         for time in waitTime[i]:
@@ -130,10 +137,13 @@ def paint():
         x.sort()
         for key in x:
             y.append((lis[i].num - sum) / lis[i].num)
-            sum += data[int(key*10)]
+            sum += data[int(key * 10)]
+        WaitTime_distribution_data['x' + str(i)] = x
+        WaitTime_distribution_data['y' + str(i)] = y
         plt.plot(x, y, color=color[i])
         plt.yscale('log')
         # plt.legend(loc='upper left')
+    print(WaitTime_distribution_data, file=file_WaitTime)
     plt.show()
 
 
