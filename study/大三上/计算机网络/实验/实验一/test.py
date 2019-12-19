@@ -1,11 +1,9 @@
-class Q:
-    lis = {}
-
-
-a = Q()
-b = Q()
-
-a.lis[1] = 1
-print(a.lis)
-print(b.lis)
-print(Q.lis)
+import json
+import scipy.io as sio
+# file_name = '队列长度分布'
+file_name = '等待时间分布'
+file = open(file_name+'.txt', 'r+')
+dic = eval(file.read())
+file.close()
+for key in dic:
+    sio.savemat(file_name+'.mat', dic)
