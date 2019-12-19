@@ -5,5 +5,4 @@ file_name = '等待时间分布'
 file = open(file_name+'.txt', 'r+')
 dic = eval(file.read())
 file.close()
-for key in dic:
-    sio.savemat(file_name+'.mat', dic)
+sio.savemat(file_name+'.mat', dic)

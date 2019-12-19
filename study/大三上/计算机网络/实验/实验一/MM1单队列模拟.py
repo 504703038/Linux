@@ -1,5 +1,6 @@
 import random
 import matplotlib.pyplot as plt
+import scipy.io as sio
 INF = 1e9
 TOT = 1e6
 lambd = 0.8
@@ -72,6 +73,10 @@ def paint():
     for key in x:
         y.append((lastTime - sum) / lastTime)
         sum += QLength[key]
+    data = {}
+    data['x'] = x
+    data['y'] = y
+    sio.savemat('单队列队列长度分布.mat', data)
     plt.plot(x, y, label="Queue length distribution")
     plt.yscale('log')
     plt.legend(loc='upper left')
@@ -92,7 +97,11 @@ def paint():
     x.sort()
     for key in x:
         y.append((num - sum) / num)
-        sum += data[int(key*10)]
+        sum += data[int(key * 10)]
+    data = {}
+    data['x'] = x
+    data['y'] = y
+    sio.savemat('单队列等待时间分布.mat', data)
     plt.plot(x, y, label="Wait time distribution")
     plt.yscale('log')
     plt.legend(loc='upper left')
