@@ -39,8 +39,13 @@ class NeuralNetwork:
             L2 = self.sigmoid(np.dot(L1, self.W))
             # 计算误差
             L2_error = self.CalculateError(L2)
-            if n % 20000 == 0:
-                print('Error:' + str(np.mean(np.abs(L2_error))))
+            if n % 200 == 0:
+                tmp = L2_error.shape[0]
+                err = 0
+                for i in range(tmp):
+                    if L2_error[i] != 0:
+                        err += 1
+                print('Error:', err, 1-1.0*err/5000)
             L2_delta = L2_error * self.dsigmoid(L2)
             L1_error = L2_delta.dot(self.W.T)
             L1_delta = L1_error * self.dsigmoid(L1)
